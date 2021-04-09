@@ -1,0 +1,193 @@
+.parent {
+    background-color: rgb(0, 0, 0);
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/lagos.jpg");
+    background-size: cover;
+    color: #fff;
+    /*font-family: 'Libre Baskerville', serif;*/
+    font-family: 'Open Sans', sans-serif;
+}
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    border-bottom: 1px solid rgba(255, 255, 255 , 0.3);
+    align-items: center;
+    padding: 0 20px;
+}
+.logo {
+    width: 50%;
+}
+.weather, .menus {
+    width: 25%;
+}
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo img {
+    width: 40px;
+}
+.logo span {
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.app-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 65px);
+    text-align: center;
+}
+.app-content-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.app-content .time {
+    font-size: 6rem;
+    font-weight: 800;
+}
+.app-content .date {
+    font-size: 1.6rem;
+}
+.app-content .greet {
+    font-size: 1.6rem;
+    margin: 20px 0;
+}
+.app-content .button a, .app-content-in .button a {
+    background-color: #1a631a;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.app-content .button a:hover, .app-content-in .button a  {
+    background-color: #fff;
+    color: #1a631a;
+}
+
+
+/** App Menu **/
+
+.app-header .home-menu {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 10px;
+}
+.app-menu ul {
+    display: flex;
+    list-style-type: none;
+}
+.app-menu ul a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 10px;
+}
+.app-menu ul a:hover {
+    color: #f2f2f2;
+}
+
+/**App Weather**/
+.weather {
+    display: flex;
+    align-items: center;
+}
+.weather-icon {
+    text-align: center;
+}
+.weather-icon img {
+    width: 30px;
+}
+.weather-desc {
+    font-size: 10px;
+}
+.weather-right {
+    margin-left: 10px;
+}
+.weather-temp {
+    font-size: 50px;
+}
+.weather-location {
+    font-size: 11px;
+    text-align: center;
+}
+.weather-type {
+    font-size: 30px;
+}
+.weather-o {
+    vertical-align: 20px;
+    font-size: 25px;
+}
+
+/**App Conatianer**/
+.app-container-outer {
+    min-height: calc(100vh - 130px); 
+}
+.app-row-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.app-col {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 5px;
+    color: #000;
+    width: 40%;
+}
+.app-row-center .app-col h1 {
+    text-align: center;
+}
+
+/** App Forms **/
+.app-col .form-label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.app-col .form-control {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ced4da;
+}
+.app-col .app-btn {
+    background-color: #1a631a;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 10px;
+    border: 1px solid #1a631a;
+}
+.app-col .app-btn:hover {
+    background-color: #fff;
+    color: #1a631a;
+}
+.crypto {
+    font-size: 14px;
+}
+
+/** App Footer **/
+footer {
+    height: 65px;
+    border-top: 1px solid rgba(255, 255, 255 , 0.3);
+    padding: 0 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
