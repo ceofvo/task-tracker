@@ -17,10 +17,11 @@
     padding: 0 20px;
 }
 .logo {
-    width: 50%;
+    width: 33.3%;
 }
 .weather, .menus {
-    width: 25%;
+    width: 33.3%;
+    text-align: right;
 }
 .logo a {
     display: flex;
@@ -38,7 +39,6 @@
     font-size: 30px;
     margin-left: 10px;
 }
-
 .app-content{
     display: flex;
     justify-content: center;
@@ -46,11 +46,8 @@
     min-height: calc(100vh - 65px);
     text-align: center;
 }
-.app-content-in {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.content-margin-top {
+    margin-top: 50px;
 }
 .app-content .time {
     font-size: 6rem;
@@ -63,7 +60,7 @@
     font-size: 1.6rem;
     margin: 20px 0;
 }
-.app-content .button a, .app-content-in .button a {
+.app-content .button a, .app-content-in .button a, .view-page-btn .button a  {
     background-color: #1a631a;
     padding: 10px 20px;
     display: inline-block;
@@ -72,12 +69,54 @@
     margin-top: 20px;
     text-decoration: none;
 }
-.app-content .button a:hover, .app-content-in .button a  {
+.app-content .button a:hover, .app-content-in .button a:hover, .view-page-btn .button a:hover  {
     background-color: #fff;
     color: #1a631a;
 }
-
-
+.view-page-btn {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.app-content-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.app-content-in .time {
+    font-size: 6rem;
+    font-weight: 800;
+}
+.app-content-in .date {
+    font-size: 1.6rem;
+}
+.app-content-in .greet {
+    font-size: 1.6rem;
+    margin: 20px 0;
+}
+.form-errors {
+	color: #ff0000;
+	font-size: 13px;
+    margin-bottom: 10px;
+}
+.form-success-gen {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.form-error-gen {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
 /** App Menu **/
 
 .app-header .home-menu {
@@ -137,7 +176,6 @@
 .app-row-center {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
 }
 .app-col {
     background-color: #fff;
@@ -164,6 +202,7 @@
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #ced4da;
+    line-height: 20px;
 }
 .app-col .app-btn {
     background-color: #1a631a;
@@ -172,13 +211,89 @@
     color: #fff;
     margin-top: 10px;
     border: 1px solid #1a631a;
+    cursor: pointer;
 }
 .app-col .app-btn:hover {
     background-color: #fff;
     color: #1a631a;
+    cursor: pointer;
 }
 .crypto {
     font-size: 14px;
+}
+
+/***Task Content***/
+.task-data {
+    list-style: none;
+    padding: 0;
+}
+.task-data li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.btn-edit {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    margin: .25rem .125rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+.btn-delete {
+    color: #fff;
+    background-color: #b02a37;
+    border-color: #a52834;
+    margin: .25rem .125rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+.btn-pending {
+    color: #000;
+    background-color: #3dd5f3;
+    border-color: #25cff2;
+    margin: .25rem .125rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+.btn-done {
+    color: #fff;
+    background-color: #146c43;
+    border-color: #13653f;
+    margin: .25rem .125rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+.task-li-cont {
+    font-size: 18px;
+    color:#000;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.app-row-center-div h4 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.app-col-data {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 40px 30px;
+    border-radius: 5px;
+}
+.app-row-center-div {
+    width: 80%;
 }
 
 /** App Footer **/

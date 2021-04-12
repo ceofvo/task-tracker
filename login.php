@@ -4,7 +4,7 @@
     <!--Login Form Section-->
     <div class="app-container-outer">
         <div class="app-row-center">
-            <div class="app-col">
+            <div class="app-col content-margin-top">
                 <h1 class="text-center">Login</h1>
                 <?php if ( !empty($loginErr) ): ?>
                     <div class="alert alert-danger"> <?php echo $loginErr ; ?> </div>

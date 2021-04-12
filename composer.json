@@ -1,0 +1,5 @@
+{
+    "require": {
+        "unicodeveloper/jusibe-php-lib": "^1.0"
+    }
+}

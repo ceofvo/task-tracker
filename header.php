@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="parent">
@@ -25,10 +26,13 @@
                 <ul>
                     <?php if ( isset($_SESSION['id']) ) : ?>
                     <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.php">Add Task</a>
+                        <a class="nav-link active" href="add-task.php">Add Task</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="portfolio-items.php">View All Tasks</a>
+                        <a class="nav-link" href="view-all-task.php">View All Tasks</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="my-account.php">My Account</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="dashboard.php?logout=1">Logout</a>

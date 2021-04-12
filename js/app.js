@@ -6,39 +6,6 @@ const setBackground = document.querySelector('.parent');
 const setCrypto = document.querySelector('.crypto');
 
 
-// Create time and set in app
-function currentDate() {
-    const now = new Date();
-    const hours = now.getHours();
-    let timeOfDay
-  
-    //Deterrmine what hour of day and apply appropriate greeting
-    if(hours < 12) {
-      timeOfDay = "Good morning. Have a lovely day ahead";
-    } else if (hours >= 12 && hours < 17) {
-      timeOfDay = "Good afternoon. How is your day going?";
-    } else {
-      timeOfDay = "Good evening. Hope you had a great day at work";
-    }
-  
-    const optionsDate = {
-      year: 'numeric', month: 'long', weekday: 'long', day: 'numeric'
-    };
-    const optionsTime = {
-      hour: 'numeric', minute: 'numeric', hour12: true
-    };
-    const datePart = new Intl.DateTimeFormat('en-US', optionsDate).format(now);
-    const timePart = new Intl.DateTimeFormat('en-US', optionsTime).format(now);
-
-    setDate.textContent = datePart;
-    setTime.textContent = timePart;
-    setGreeting.textContent = timeOfDay;
-}
-  
-setInterval(currentDate, 1000);
-  
-currentDate();
-
 // Get weather details and set in app
 const params = {
   access_key: '9d77df11c7e0b5c5d94895b5913b234f',
@@ -93,13 +60,52 @@ setInterval(fetchBackground, 100000);
   
 fetchBackground();
 
+
+const host = "http://localhost/task-tracker/";
+
+if ( (window.location.href !== host + 'login.php') && (window.location.href !== host + 'register.php') && (window.location.href !== host + 'add-task.php') && (window.location.href !== host + 'view-all-task.php') ) {
+// Create time and set in app
+function currentDate() {
+    const now = new Date();
+    const hours = now.getHours();
+    let timeOfDay
+  
+    //Deterrmine what hour of day and apply appropriate greeting
+    if(hours < 12) {
+      timeOfDay = "Good morning. Have a lovely day ahead";
+    } else if (hours >= 12 && hours < 17) {
+      timeOfDay = "Good afternoon. How is your day going?";
+    } else {
+      timeOfDay = "Good evening. Hope you had a great day today";
+    }
+  
+    const optionsDate = {
+      year: 'numeric', month: 'long', weekday: 'long', day: 'numeric'
+    };
+    const optionsTime = {
+      hour: 'numeric', minute: 'numeric', hour12: true
+    };
+    const datePart = new Intl.DateTimeFormat('en-US', optionsDate).format(now);
+    const timePart = new Intl.DateTimeFormat('en-US', optionsTime).format(now);
+
+    setDate.textContent = datePart;
+    setTime.textContent = timePart;
+    setGreeting.textContent = timeOfDay;
+}
+  
+setInterval(currentDate, 1000);
+  
+currentDate();
+
+
+//Crypto API for exchange rates
+
 const myHeaders = new Headers({
   'X-CoinAPI-Key' : '9D4DEAF6-B580-4D2E-B4DE-5C5E076CD3EC',
   'Accept': 'application/json'
 
 });
 
-//Crypto API for exchange rates
 function fetchCrypto(){
   fetch('https://rest.coinapi.io/v1/exchangerate/BTC/USD', {
   headers: myHeaders,
@@ -107,11 +113,6 @@ function fetchCrypto(){
   })
     .then( response => response.json() )
     .then( (response)=>{
-      console.log(response) 
-      console.log(response.asset_id_base)
-      console.log(response.src_side_base[0].asset)
-      console.log(response.src_side_base[0].rate)
-      console.log(response.src_side_base[0].volume)
       setCrypto.innerHTML = `
               <div>
               ${response.asset_id_base}/${response.src_side_base[0].asset} Rate: ${response.src_side_base[0].rate} Volume: ${response.src_side_base[0].volume}
@@ -122,3 +123,9 @@ function fetchCrypto(){
 }
 
 fetchCrypto();
+
+}
+
+
+
+

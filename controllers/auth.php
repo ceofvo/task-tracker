@@ -16,6 +16,7 @@ $firstname = "";
 $lastname = "";
 $email = "";
 $password = "";
+$phone = "";
 
 //get the user details on registration submit and validate
 if ( isset( $_POST['register-submit'] ) ) {
@@ -119,18 +120,12 @@ if ( isset( $_GET['logout'] ) ) {
     unset( $_SESSION['id'] );
     unset( $_SESSION['firstname'] );
     unset( $_SESSION['lastname'] );
-    header('location: login.php');
+    header('location: index.php');
     exit();
 }
 
-//Dashboard Data
 
-// User data for dashboard
-$sql1 = "SELECT * FROM users";
-$stmt = $conn->prepare($sql1); 
-$stmt->execute();
-$result = $stmt->get_result();
-$totalUsers = $result->num_rows;
+//Update User Account
 
 
 ?>
