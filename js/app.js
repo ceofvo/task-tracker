@@ -36,7 +36,7 @@ function processData(data) {
  }
 //Get current weather 
 function fetchWeather() {
-  fetch(`https://api.weatherstack.com/current?access_key=${params.access_key}&query=fetch:ip`)
+  fetch(`http://api.weatherstack.com/current?access_key=${params.access_key}&query=fetch:ip`)
   .then(validateResponse)
   .then(response => response.json())
   .then(processData)
