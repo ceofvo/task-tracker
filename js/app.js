@@ -22,6 +22,7 @@ function logError(error) {
   console.log('Looks like there was a problem:', error);
 }
 function processData(data) {
+  console.log(data);
   setWeather.innerHTML = `<div>
           <div class="weather-icon"><img src="${data.current.weather_icons[0]}" alt="${data.current.weather_descriptions[0]}" ></div>
           <div class="weather-desc">${data.current.weather_descriptions[0]}</div>
