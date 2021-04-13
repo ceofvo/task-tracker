@@ -19,7 +19,7 @@
 .logo {
     width: 33.3%;
 }
-.weather, .menus {
+.weather, .menus, .app-menu {
     width: 33.3%;
     text-align: right;
 }
