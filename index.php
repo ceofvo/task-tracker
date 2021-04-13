@@ -1,3 +1,6 @@
+<?php 
+    require 'path.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@
 
             </div>
             <div class="logo"><a href="index.php"> <img src="images/calendar.png" alt="Logo Icon"> <span>Task Tracker</span> </a> </div>
-            <div class="menus"><a class="home-menu" href="login.php">Get Started</a></div>
+            <div class="menus"><a class="home-menu" href="<?php echo BASE_URL; ?>/login.php">Get Started</a></div>
         </div>
         <div class="app-content">
             <div>
@@ -25,7 +28,7 @@
                 <div class="date"></div>
                 <div class="greet"></div>
                 <div class="crypto"></div>
-                <div class="button"> <a href="login.php">Get Started</a> </div>
+                <div class="button"> <a href="<?php echo BASE_URL; ?>/login.php">Get Started</a> </div>
             </div>
         </div>
     </div>

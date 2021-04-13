@@ -8,7 +8,7 @@ const setCrypto = document.querySelector('.crypto');
 
 // Get weather details and set in app
 const params = {
-  access_key: '9d77df11c7e0b5c5d94895b5913b234f',
+  access_key: 'e9d97167a9c8c13686e07a2b3c822dcb',
   query: 'Lagos'
 } 
 
@@ -22,21 +22,39 @@ function logError(error) {
   console.log('Looks like there was a problem:', error);
 }
 function processData(data) {
-  console.log(data);
-  setWeather.innerHTML = `<div>
-          <div class="weather-icon"><img src="${data.current.weather_icons[0]}" alt="${data.current.weather_descriptions[0]}" ></div>
-          <div class="weather-desc">${data.current.weather_descriptions[0]}</div>
-          <div class="weather-location">${data.location.region}</div>
+  //Convert weather description to title case
+  function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+      return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ');
+  }  
+  let descText = titleCase(data.weather[0].description);
+
+  // setWeather.innerHTML = `<div>
+  //         <div class="weather-icon"><img src="${data.current.weather_icons[0]}" alt="${data.current.weather_descriptions[0]}" ></div>
+  //         <div class="weather-desc">${data.current.weather_descriptions[0]}</div>
+  //         <div class="weather-location">${data.location.region}</div>
+  //         </div>
+  //         <div class="weather-right">
+  //         <span class="weather-temp">${data.current.temperature}</span>
+  //         <span class="weather-o">o</span>
+  //         <span class="weather-type">C</span>
+  //         </div>`
+    setWeather.innerHTML = `<div>
+          <div class="weather-icon"><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${descText}" ></div>
+          <div class="weather-desc">${descText}</div>
+          <div class="weather-location">${data.name}</div>
           </div>
           <div class="weather-right">
-          <span class="weather-temp">${data.current.temperature}</span>
+          <span class="weather-temp">${data.main.temp}</span>
           <span class="weather-o">o</span>
           <span class="weather-type">C</span>
           </div>`
  }
 //Get current weather 
 function fetchWeather() {
-  fetch(`http://api.weatherstack.com/current?access_key=${params.access_key}&query=fetch:ip`)
+  //fetch(`https://api.weatherstack.com/current?access_key=${params.access_key}&query=fetch:ip`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${params.query}&units=metric&appid=${params.access_key}`) 
   .then(validateResponse)
   .then(response => response.json())
   .then(processData)
@@ -62,7 +80,7 @@ setInterval(fetchBackground, 100000);
 fetchBackground();
 
 
-const host = "http://localhost/task-tracker/";
+const host = "https://task-tracker-fvo-app.herokuapp.com/";
 
 if ( (window.location.href !== host + 'login.php') && (window.location.href !== host + 'register.php') && (window.location.href !== host + 'add-task.php') && (window.location.href !== host + 'view-all-task.php') ) {
 // Create time and set in app
@@ -114,6 +132,7 @@ function fetchCrypto(){
   })
     .then( response => response.json() )
     .then( (response)=>{
+      console.log(response);
       setCrypto.innerHTML = `
               <div>
               ${response.asset_id_base}/${response.src_side_base[0].asset} Rate: ${response.src_side_base[0].rate} Volume: ${response.src_side_base[0].volume}
