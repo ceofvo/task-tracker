@@ -41,7 +41,7 @@ function processData(data) {
   //         <span class="weather-type">C</span>
   //         </div>`
     setWeather.innerHTML = `<div>
-          <div class="weather-icon"><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${descText}" ></div>
+          <div class="weather-icon"><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${descText}" ></div>
           <div class="weather-desc">${descText}</div>
           <div class="weather-location">${data.name}</div>
           </div>
@@ -132,7 +132,6 @@ function fetchCrypto(){
   })
     .then( response => response.json() )
     .then( (response)=>{
-      console.log(response);
       setCrypto.innerHTML = `
               <div>
               ${response.asset_id_base}/${response.src_side_base[0].asset} Rate: ${response.src_side_base[0].rate} Volume: ${response.src_side_base[0].volume}
