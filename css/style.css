@@ -127,6 +127,7 @@
 .app-menu ul {
     display: flex;
     list-style-type: none;
+    justify-content: flex-end;
 }
 .app-menu ul a {
     color: #fff;
